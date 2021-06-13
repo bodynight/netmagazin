@@ -2,6 +2,7 @@
 function aaa()
 	{
 		var x = window.localStorage.getItem('xxx');
-		window.localStorage.setItem('xxx', 333);
+		x = x*1 + 1;
+		window.localStorage.setItem('xxx', x );
 		alert(x);
 	}
