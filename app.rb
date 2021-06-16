@@ -37,3 +37,7 @@ end
 get '/about' do
 	erb :about
 end
+
+post '/order' do
+ erb "ваш заказ оплачен, наш менеджер с вами свяжется! "
+end

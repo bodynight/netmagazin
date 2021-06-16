@@ -19,6 +19,12 @@ function update_orders_button()
 	$('#orders_button').val(text);
 }
 
+function number_carts()
+{
+	var cart_numbers = cart_get_number_of_items()
+	$('#cart_numbers')..innerHTML = cart_numbers
+}
+
 function add_to_cart(id)
 {
 	var key = 'product_' + id;
