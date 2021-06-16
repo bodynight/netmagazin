@@ -21,8 +21,8 @@ function update_orders_button()
 
 function number_carts()
 {
-	var cart_numbers = cart_get_number_of_items()
-	$('#cart_numbers')..innerHTML = cart_numbers
+	var numbers = cart_get_number_of_items();
+	document.getElementById("cart_numbers").innerHTML = numbers;
 }
 
 function add_to_cart(id)

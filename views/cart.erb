@@ -26,11 +26,17 @@
     <% end %>
   </tbody>
 </table>
+<h3>Numeric products: <span id="cart_numbers">Bla</span></h3>
 <h3>Finish Summa: <%= sum %> </h3>
 <form action="/order" method="POST">
 
   <div class="mb-3">
     <input type="hidden" name="sum"  value="<%= sum %>" />
+  </div>
+
+  <div class="mb-3">
+    <label  class="form-text">Name:</label>
+    <input type="form-text" name="name" class="form-control"  >
   </div>
 
   <div class="mb-3">
@@ -43,12 +49,6 @@
     <input type="form-text" name="adress" class="form-control"  >
   </div>
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-
   <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -57,5 +57,6 @@
 	$(function() {
 		update_orders_input();
 		update_orders_button();
+    number_carts();
 	});
 </script>
