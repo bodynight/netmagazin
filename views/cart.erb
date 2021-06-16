@@ -31,22 +31,23 @@
 <form action="/order" method="POST">
 
   <div class="mb-3">
-    <input type="hidden" name="sum"  value="<%= sum %>" />
+    <input type="hidden" name="order[sum]"  value="<%= sum %>" />
+    <input type="hidden" name="order[order]"  value="<%= @order %>" />
   </div>
 
   <div class="mb-3">
     <label  class="form-text">Name:</label>
-    <input type="form-text" name="name" class="form-control"  >
+    <input type="form-text" name="order[name]" class="form-control"  >
   </div>
 
   <div class="mb-3">
     <label  class="form-text">Phone:</label>
-    <input type="form-text" name="phone" class="form-control" placeholder="+7978-111-11-11" >
+    <input type="form-text" name="order[phone]" class="form-control" placeholder="+7978-111-11-11" >
   </div>
 
   <div class="mb-3">
     <label  class="form-text">Adress:</label>
-    <input type="form-text" name="adress" class="form-control"  >
+    <input type="form-text" name="order[adress]" class="form-control"  >
   </div>
 
   <br>

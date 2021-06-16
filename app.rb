@@ -9,6 +9,9 @@ set :database, {adapter:"sqlite3", database:"pizzashop.db"}
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
+
 def str_tohash
 	@input =	@order.delete('product_')
 	@arr = @input.split(/[=,]/)
@@ -39,5 +42,7 @@ get '/about' do
 end
 
 post '/order' do
- erb "ваш заказ оплачен, наш менеджер с вами свяжется! "
+	@o = Order.new params[:order]
+	@o.save
+ erb :order
 end
