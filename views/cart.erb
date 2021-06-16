@@ -1,4 +1,29 @@
 <h2>Cart:</h2>
-<%= @order %>
-<br/>
-<%= @order_h %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col">Numerik</th>
+      <th scope="col">Summa</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% i = 0 %>
+  	<% sum = 0 %>
+  	<% @order_h.each do |key, value| %>
+  	<% i += 1 %>
+  	<% prod = Product.find(key) %>
+  	<% summa = value * prod.price.to_i %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td><%= prod.title %></td>
+      <td><%= value %> шт.</td>
+      <td><%= summa %></td>
+      <% sum = sum + summa %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3>Finish Summa: <%= sum %> </h3>
