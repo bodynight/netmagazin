@@ -12,9 +12,10 @@
   <tbody>
   	<% i = 0 %>
   	<% sum = 0 %>
+    <% cnt = 0 %>
   	<% @order_h.each do |key, value| %>
   	<% i += 1 %>
-  	<% prod = Product.find(key) %>
+    <% prod = Product.find(key) %>
   	<% summa = value * prod.price.to_i %>
     <tr>
       <th scope="row"><%= i %></th>
@@ -22,12 +23,15 @@
       <td><%= value %> шт.</td>
       <td><%= summa %></td>
       <% sum = sum + summa %>
+      <% cnt += value %>
     </tr>
     <% end %>
+    <td></td>
+    <td></td>
+    <td><%= cnt %> шт.</td>
+    <td> Totall: <%= sum %> rub.</td>
   </tbody>
 </table>
-<h3>Numeric products: <span id="cart_numbers">Bla</span></h3>
-<h3>Finish Summa: <%= sum %> </h3>
 <form action="/order" method="POST">
 
   <div class="mb-3">
@@ -52,4 +56,3 @@
   <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-

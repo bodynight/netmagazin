@@ -7,9 +7,13 @@ require 'sinatra/activerecord'
 set :database, {adapter:"sqlite3", database:"pizzashop.db"}
 
 class Product < ActiveRecord::Base
+
 end
 
 class Order < ActiveRecord::Base
+	validates :name, presence: true
+	validates :phone, presence: true
+	validates :adress, presence: true
 end
 
 def str_tohash
@@ -44,5 +48,6 @@ end
 post '/order' do
 	@o = Order.new params[:order]
 	@o.save
+	@order = Order.all
  erb :order
 end
